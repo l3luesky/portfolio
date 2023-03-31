@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.smhrd.mapper.ContactMapper">
+	<select id="selectMem" resultType="com.smhrd.entity.Member">
+		select * from tg_member where mem_num = #{mem_num}
+	</select>
+	<insert id="insertQues" parameterType="com.smhrd.entity.Contact">
+   		<selectKey order="BEFORE" keyProperty="con_num" resultType="int"> 
+			SELECT CONTACT_SEQ.NEXTVAL FROM DUAL
+		</selectKey>
+		insert into tg_contact values(#{con_num},#{con_title}
+		,#{con_content},0,sysdate,#{mem_num},'답변대기')
+	</insert>
+	<select id="contactList" resultType="com.smhrd.entity.Contact">
+		select * from tg_contact where mem_num = #{mem_num}
+	</select>
+	<select id="selectTest" resultType="com.smhrd.entity.Member">
+		select * from tg_member where mem_id = #{mem_id}
+	</select>
+	<select id="getList" resultType="com.smhrd.entity.Contact">
+		select * from tg_contact
+	</select>
+	<select id="getContact" resultType="com.smhrd.entity.Contact">
+		select * from tg_contact where con_num = #{con_number}
+	</select>
+	<update id="updateContact">
+		update tg_contact set CON_REPLYCHECK = '답변완료' where con_num=#{con_num}
+	</update>
+</mapper>

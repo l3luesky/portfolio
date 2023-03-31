@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.smhrd.mapper.ReplyMapper">
+	<insert id="insertReply" parameterType="com.smhrd.entity.Reply">
+   		<selectKey order="BEFORE" keyProperty="re_num" resultType="int"> 
+			SELECT REPLY_SEQ.NEXTVAL FROM DUAL
+		</selectKey>
+		insert into tg_reply values(#{re_num},#{re_content}
+		,sysdate,#{con_num})
+	</insert>
+	<select id="getContact" resultType="com.smhrd.entity.Contact">
+		select * from tg_contact where con_num = #{con_num}
+	</select>
+	
+	<update id="updataReply" parameterType="com.smhrd.entity.Reply">
+		update tg_reply set re_content = #{re_content} where con_num = #{con_num}
+	</update>
+	
+	<select id="getReply" resultType="com.smhrd.entity.Reply">
+		select * from tg_reply where con_num = #{con_num}
+	</select>
+</mapper>

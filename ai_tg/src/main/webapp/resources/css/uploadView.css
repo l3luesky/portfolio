@@ -1,0 +1,35 @@
+/* 이미지 영역 스타일 */
+
+#image-container {
+    width: 512px;
+    height: 512px;
+    background-color: #ddd;
+    text-align: center;
+    margin: 0 auto; /* 중앙 정렬 */
+    overflow: hidden;
+  }
+
+#image-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 버튼 영역 스타일 */
+#button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#button-container button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+#button-container button:hover {
+    background-color: #ddd;
+}

@@ -1,0 +1,101 @@
+/* pricing */
+.cards-2 {
+	padding-top: 7.875rem;
+	padding-bottom: 2.25rem;
+	text-align: center;
+}
+
+.cards-2 .h2-heading {
+	margin-bottom: 3.75rem;
+}
+
+.cards-2 .card {
+	display: block;
+	max-width: 19rem;
+	margin-right: auto;
+	margin-bottom: 3rem;
+	margin-left: auto;
+	border: 1px solid #ccd3df;
+	border-radius: 0.375rem;
+}
+
+.cards-2 .card .card-body {
+	padding: 2.5rem 2rem 2.75rem 2em;
+}
+
+.cards-2 .card .card-title {
+	margin-bottom: 0.5rem;
+	color: #AB7442;
+	font: 700 1.125rem/1.5rem "Open Sans", sans-serif;
+}
+
+.cards-2 .card .price .currency {
+	margin-right: 0.25rem;
+	color: #434c54;
+	font-weight: 700;
+	font-size: 1.5rem;
+	vertical-align: 40%;
+}
+
+.cards-2 .card .price .value {
+	color: #434c54;
+	font: 700 3.25rem/3.5rem "Open Sans", sans-serif;
+	text-align: center;
+}
+
+.cards-2 .card .frequency {
+	font-size: 0.875rem;
+}
+
+.cards-2 .card .divider {
+	height: 1px;
+	margin-top: 1.75rem;
+	margin-bottom: 2rem;
+	border: none;
+	background-color: #ccd3df;
+}
+
+.cards-2 .card .list-unstyled {
+	margin-top: 1.875rem;
+	margin-bottom: 1.625rem;
+	text-align: left;
+}
+
+.cards-2 .card .list-unstyled .media {
+	margin-bottom: 0.5rem;
+}
+
+.cards-2 .card .list-unstyled .fas {
+	color: #AB7442;
+	font-size: 0.875rem;
+	line-height: 1.625rem;
+}
+
+.cards-2 .card .list-unstyled .fas.fa-times {
+	margin-left: 0.1875rem;
+	margin-right: 0.125rem;
+	color: #555;
+}
+
+.cards-2 .card .list-unstyled .media-body {
+	margin-left: 0.625rem;
+}
+
+.btn-solid-reg {
+	display: inline-block;
+	padding: 1.1875rem 2.125rem 1.1875rem 2.125rem;
+	border: 0.125rem solid #AB7442;
+	border-radius: 2rem;
+	background-color: #AB7442;
+	color: #fff;
+	font: 700 0.875rem/0 "Open Sans", sans-serif;
+	text-decoration: none;
+	transition: all 0.2s;
+}
+
+.cards-2 .card {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 20px;
+    width: 300px;
+}

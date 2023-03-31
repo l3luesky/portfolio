@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.smhrd.mapper.MemberMapper">
+	<insert id="memberInsert" parameterType="com.smhrd.entity.Member">
+   		<selectKey order="BEFORE" keyProperty="mem_num" resultType="int"> 
+			SELECT MEMBER_SEQ.NEXTVAL FROM DUAL
+		</selectKey>
+		insert into tg_member values(#{mem_num},#{mem_name}
+		,#{mem_id},#{mem_pw},#{mem_addr},#{mem_tel},sysdate)
+	</insert>
+	<select id="memberLogin" resultType="com.smhrd.entity.Member">
+		select * from tg_member where mem_id = #{mem_id}
+	</select>
+	<update id="updateInfo" parameterType="com.smhrd.entity.Member">
+		update tg_member set mem_name = #{mem_name}, mem_pw = #{mem_pw}, mem_tel=#{mem_tel}, mem_addr=#{mem_addr} where mem_num = #{mem_num}
+	</update>
+	<select id="selectData" resultType="com.smhrd.entity.Member">
+		select * from tg_member where mem_num = #{mem_num}
+	</select>
+
+
+
+</mapper>
