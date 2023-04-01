@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd"> 
+
+<mapper namespace="BoardMap">
+
+	<select id="selectList" resultType="com.com.com.dto.BoardMapDTO">
+		SELECT 
+			* 
+		FROM TC_BOARD_MAP
+		WHERE USED_YN = 'Y'
+		START WITH MAP_ID=1
+		CONNECT BY PRIOR MAP_ID = PAR_MAP_ID
+		ORDER SIBLINGS BY BOARD_ORDER
+	</select>
+	
+	<select id="selectData" parameterType="int" resultType="com.com.com.dto.BoardMapDTO">
+		SELECT *
+		FROM TC_BOARD_MAP
+		WHERE MAP_ID=#{mapId}
+	</select>
+	
+	
+</mapper>
